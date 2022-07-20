@@ -148,23 +148,27 @@ str(combined_data)
 * Check the total number of users:
   Then we can use the BigQuery to analysis the data.
   Here we can apply:
-
+  
+```
 SELECT                                          
   COUNT(*) AS TOTAL_DATA                        
 FROM                                            
   `task2-356801.FitBit.combined_data`           
- 
+ ```
   We have total 12441 rows.
 
+```
 SELECT                                         
   COUNT(DISTINCT(Id)) AS num_of_user           
 FROM                                           
   `task2-356801.FitBit.combined_data`          
  
   We have totally 24 users's data.
-  
+```
+
 * Check how many day per user report:
 
+```
 SELECT                                              
   Id,                                                 
   COUNT(DISTINCT(ActivityDate)) AS TOTAL_REPORT_DAY 
@@ -174,11 +178,11 @@ GROUP BY
   Id                                                
 ORDER BY                                                    
   TOTAL_REPORT_DAY DESC                             
-
+```
   We have 16 users upload the data 31 days, one user upload 18 days.
 
 * Want to know the average of report date:
-
+```
 SELECT                                                   
   AVG(TOTAL_REPORT_DAY) AS average                       
 FROM                                                     
@@ -189,3 +193,4 @@ FROM
       `task2-356801.FitBit.combined_data`                
   )                                                      
 By now, we know the average date of each user is 31 days.
+```
