@@ -191,6 +191,7 @@ FROM
       COUNT(DISTINCT(ActivityDate)) AS TOTAL_REPORT_DAY  
     FROM                                                 
       `task2-356801.FitBit.combined_data`                
-  )                                                      
+  )
+ ```
 By now, we know the average date of each user is 31 days.
-```
+
